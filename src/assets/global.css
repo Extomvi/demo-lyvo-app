@@ -1,0 +1,8 @@
+.title {
+  justify-content: center;
+  word-break: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
