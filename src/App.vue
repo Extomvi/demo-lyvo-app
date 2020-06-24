@@ -9,6 +9,12 @@
             </v-list-item-icon>
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
+          <v-list-item v-on:click="routeTo('/application')">
+            <v-list-item-icon>
+              <v-icon>mdi-home</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Application</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -41,5 +47,10 @@ export default {
   data: () => ({
     drawer: false,
   }),
+  methods: {
+    routeTo(newPath){
+      this.$router.push({ path: newPath })
+    },
+  },
 }
 </script>
