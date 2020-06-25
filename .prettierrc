@@ -1,5 +1,6 @@
 {
     "singleQuote": true,
+    "parser": "flow",
     "trailingComma": "es5",
     "semi": false,
     "printWidth": 80,
