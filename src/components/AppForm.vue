@@ -40,7 +40,8 @@
 
 <script>
 export default {
-  data: () => ({
+  data() {
+    return {
       valid: false,
       firstname: '',
       lastname: '',
@@ -53,11 +54,12 @@ export default {
         v => !!v || 'E-mail is required',
         v => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
-    }),
-    methods: {
-      submitApplication() {
-        console.log('Submitted')
-      }
     }
+  },
+  methods: {
+    submitApplication() {
+      console.log('Submitted')
+    }
+  }
 }
 </script>
