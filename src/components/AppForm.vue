@@ -32,7 +32,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-btn color="primary">Submit</v-btn>
+        <v-btn color="primary" @click="submitApplication">Submit</v-btn>
       </v-row>
     </v-container>
   </v-form>
@@ -54,5 +54,10 @@ export default {
         v => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
     }),
+    methods: {
+      submitApplication() {
+        console.log('Submitted')
+      }
+    }
 }
 </script>
