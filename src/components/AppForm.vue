@@ -1,5 +1,5 @@
 <template>
-  <v-form v-model="valid">
+  <v-form ref="form" v-model="valid">
     <v-container>
       <v-row>
         <v-col cols="12" md="4">
@@ -58,7 +58,9 @@ export default {
   },
   methods: {
     submitApplication() {
-      console.log('Submitted')
+      if (this.$refs.form.validate()) {
+        this.$store.commit('success')
+      }
     }
   }
 }
