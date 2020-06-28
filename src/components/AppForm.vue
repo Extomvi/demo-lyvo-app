@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 <template>
   <v-form ref="form" v-model="valid">
     <v-container>
