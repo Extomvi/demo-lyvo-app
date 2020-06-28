@@ -25,6 +25,12 @@ export default new Vuex.Store({
             state.loading = false
         }
     },
-    actions: {},
+    actions: {
+        async submitApplication({ commit }, postData) {
+            commit(SUBMIT_REQUEST)
+
+            commit(SUBMIT_SUCCESS)
+        }
+    },
     modules: {},
 })
