@@ -7,7 +7,6 @@ const SUBMIT_REQUEST = 'SUBMIT_REQUEST'
 const SUBMIT_SUCCESS = 'SUBMIT_SUCCESS'
 const SUBMIT_FAILURE = 'SUBMIT_FAILURE'
 
-
 export default new Vuex.Store({
     state: {
         loading: false,
