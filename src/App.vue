@@ -28,7 +28,7 @@
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
         <!-- If using vue-router -->
-        <v-alert v-if="!!$store.state.alertMsg" type="success">{{ $store.state.alertMsg }}</v-alert>
+        <v-alert v-if="!!$store.state.alertMsg" v-bind:type="$store.state.alertType">{{ $store.state.alertMsg }}</v-alert>
         <router-view></router-view>
       </v-container>
     </v-main>
