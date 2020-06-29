@@ -29,9 +29,18 @@ export default new Vuex.Store({
     actions: {
         async submitApplication({ commit }, postData) {
             commit(SUBMIT_REQUEST)
-
+            const payload = await httpPost('', postData)
             commit(SUBMIT_SUCCESS)
         }
     },
     modules: {},
 })
+
+const httpPost = async(apiEndPoint, postData) => {
+    await axios({
+        method: 'POST',
+        url: apiEndPoint,
+        data: postData,
+        config: { headers: { 'Content-Type': 'application/json' } }
+    })
+}
