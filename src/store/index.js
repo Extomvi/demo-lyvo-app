@@ -12,6 +12,7 @@ export default new Vuex.Store({
     state: {
         loading: false,
         alertMsg: '',
+        alertType: '',
     },
     mutations: {
         [SUBMIT_REQUEST](state) {
@@ -20,17 +21,23 @@ export default new Vuex.Store({
         [SUBMIT_SUCCESS](state) {
             state.alertMsg = "Submission Successful"
             state.loading = false
+            state.alertType = 'success'
         },
         [SUBMIT_FAILURE](state) {
             state.alertMsg = 'Submission failed'
             state.loading = false
+            state.alertType = 'error'
         }
     },
     actions: {
         async submitApplication({ commit }, postData) {
             commit(SUBMIT_REQUEST)
-            const payload = await httpPost('', postData)
-            commit(SUBMIT_SUCCESS)
+            try {
+                const payload = await httpPost('', postData)
+            } catch (e) {
+                console.log(e)
+                commit(SUBMIT_FAILURE)
+            }
         }
     },
     modules: {},
