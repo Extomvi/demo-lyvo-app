@@ -45,6 +45,7 @@ export default {
   data() {
     return {
       valid: false,
+      applicant: {},
       firstname: '',
       lastname: '',
       nameRules: [
@@ -61,7 +62,7 @@ export default {
   methods: {
     submitApplication() {
       if (this.$refs.form.validate()) {
-        this.$store.commit('success')
+        this.$store.dispatch('submitApplication', this.applicant)
       }
     }
   }
